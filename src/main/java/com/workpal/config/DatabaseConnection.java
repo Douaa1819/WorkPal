@@ -5,25 +5,49 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-   private static String url = "jdbc:postgresql://localhost:5432/jdbc";
-    private static  String user = "postgres";
-    private static  String password = "password";
-    public static Connection connect() {
-        Connection connection = null;
 
+    private static DatabaseConnection instance;
+
+    private Connection connection;
+
+    private static String url = "jdbc:postgresql://localhost:5432/jdbc";
+    private static String user = "postgres";
+    private static String password = "password";
+
+
+    private DatabaseConnection() {
         try {
-            connection = DriverManager.getConnection(url, user, password);
-            if (connection != null) {
+            this.connection = DriverManager.getConnection(url, user, password);
+            if (this.connection != null) {
                 System.out.println("Connexion réussie !");
-            } else {
-                System.out.println("Échec de la connexion.");
             }
         } catch (SQLException e) {
             System.out.println("Erreur de connexion : " + e.getMessage());
         }
-        return connection;
     }
-        public static void main(String[] args) {
-            connect();
+
+
+    public static DatabaseConnection getInstance() {
+        if (instance == null) {
+            instance = new DatabaseConnection();
         }
+        return instance;
+    }
+
+
+    public Connection getConnection() {
+        return this.connection;
+    }
+
+    public static void run() {
+        // Accéder à l'instance unique de DatabaseConnection
+        DatabaseConnection databaseConnection = DatabaseConnection.getInstance();
+
+        // Récupérer la connexion
+        Connection connection = databaseConnection.getConnection();
+
+        if (connection != null) {
+            System.out.println("Connexion à la base de données disponible !");
+        }
+    }
 }
