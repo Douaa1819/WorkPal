@@ -3,10 +3,12 @@ package com.workpal.services.Interfaces;
 import com.workpal.models.Membre;
 import com.workpal.models.Gestionnaire;
 import com.workpal.exceptions.InvalidInputException;
+import com.workpal.models.Personne;
+
+import java.util.Optional;
 
 public interface PersonneService {
 
-    void registerMembre(Membre membre) throws InvalidInputException;
-    void registerGestionnaire(Gestionnaire gestionnaire) throws InvalidInputException;
-    void login(String email, String password);
+    Optional<Personne> login(String email, String password);
+    void resetPassword(String email);
 }

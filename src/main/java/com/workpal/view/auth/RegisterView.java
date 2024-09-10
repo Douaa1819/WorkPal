@@ -1,4 +1,4 @@
-package com.workpal.view;
+package com.workpal.view.auth;
 
 import com.workpal.exceptions.InvalidInputException;
 import com.workpal.models.Membre;

@@ -1,9 +1,9 @@
-package com.workpal.repositories.interfaces;
+package com.workpal.repository.interfaces;
 
 import com.workpal.models.Personne;
 import java.util.Optional;
 
 public interface PersonneRepository<T extends Personne> {
-    void save(T personne);
-    Optional<T> findByEmail(String email);
+    Optional<Personne> findByEmail(String email);
+    void updatePassword(Personne personne);
 }

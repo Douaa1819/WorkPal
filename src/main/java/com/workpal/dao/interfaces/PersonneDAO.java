@@ -8,8 +8,7 @@ import com.workpal.models.Personne;
 import java.util.Optional;
 
 public interface PersonneDAO {
-    void registerMembre(Membre membre) throws InvalidInputException;
-    void registerGestionnaire(Gestionnaire gestionnaire) throws InvalidInputException;
-    Optional<Personne> login(String email, String password);
+
     Optional<Personne> findByEmail(String email);
+    void updatePassword(Personne personne);
 }
