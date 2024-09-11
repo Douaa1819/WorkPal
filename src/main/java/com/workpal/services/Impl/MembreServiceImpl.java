@@ -22,4 +22,15 @@ public class MembreServiceImpl implements MembreService {
         membreRepository.register(membre);
         System.out.println("Membre enregistré avec succès : " + membre.getName());
     }
+
+
+    @Override
+    public void updateMembre(Membre membre) {
+        if (membre == null || membre.getEmail() == null || membre.getPhone() == null) {
+            throw new IllegalArgumentException("Les informations du membre sont invalides.");
+        }
+
+        membreRepository.updateMembre(membre);
+    }
+
 }

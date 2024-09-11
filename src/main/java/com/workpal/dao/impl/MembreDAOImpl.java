@@ -64,4 +64,23 @@ public class MembreDAOImpl implements MembreDAO {
         }
         return Optional.empty();
     }
+
+
+    @Override
+    public void updateMembre(Membre membre) {
+        String sql = "UPDATE membre  SET email = ?, phone = ? WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, membre.getEmail());
+            stmt.setString(2, membre.getPhone());
+            stmt.setInt(3, membre.getId());
+
+            int rowsAffected = stmt.executeUpdate();
+            if (rowsAffected == 0) {
+                throw new SQLException("Échec de la mise à jour du membre, aucun enregistrement trouvé avec cet ID.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new IllegalStateException("Erreur lors de la mise à jour des informations du membre.", e);
+        }
+    }
 }

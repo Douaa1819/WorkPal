@@ -9,5 +9,6 @@ public interface MembreDAO {
 
     void save(Membre membre);
     Optional<Membre> findByEmail(String email);
+    void updateMembre(Membre membre);
 
 }

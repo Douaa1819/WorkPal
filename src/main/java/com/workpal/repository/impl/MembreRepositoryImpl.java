@@ -20,4 +20,10 @@ public class MembreRepositoryImpl implements MembreRepository {
     public Optional<Membre> findByEmail(String email) {
         return membreDAO.findByEmail(email);
     }
+
+
+    @Override
+    public void updateMembre(Membre membre) {
+        membreDAO.updateMembre(membre);
+    }
 }
