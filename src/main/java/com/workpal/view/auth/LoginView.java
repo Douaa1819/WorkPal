@@ -12,7 +12,6 @@ public class LoginView {
     private final PersonneService personneService;
 
     public LoginView() {
-        // DAO et Repository initialisés ici
         PersonneDAOImpl personneDAO = new PersonneDAOImpl();
         PersonneRepositoryImpl personneRepository = new PersonneRepositoryImpl(personneDAO);
         this.personneService = new PersonneServiceImpl(personneRepository);
@@ -24,7 +23,7 @@ public class LoginView {
         System.out.println("2. Mot de passe oublié");
 
         int choice = scanner.nextInt();
-        scanner.nextLine();  // Consommer la nouvelle ligne
+        scanner.nextLine();
 
         if (choice == 1) {
             handleLogin(scanner);

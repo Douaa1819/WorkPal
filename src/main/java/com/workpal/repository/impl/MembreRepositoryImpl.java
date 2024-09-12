@@ -9,7 +9,8 @@ import java.util.Optional;
 
 public class MembreRepositoryImpl implements MembreRepository {
 
-    private MembreDAO membreDAO = new MembreDAOImpl();
+    private MembreDAO membreDAO = new MembreDAOImpl()
+            ;
 
     @Override
     public void register(Membre membre) {

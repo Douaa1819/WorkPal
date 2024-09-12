@@ -5,16 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1305ae3f-af3a-4ad8-93c7-9abd05b464bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/workpal/HomeView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/AdminDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/WorkingSpaceDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/AdminDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/WorkingSpaceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/models/WorkingSpace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/impl/WorkingSpaceRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/interfaces/WorkingSpaceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/WorkingSpaceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/WorkingSpaceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/workingSpace/WorkingSpaceView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/MembreDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/MembreDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/MembreDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/MembreDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/repository/impl/MembreRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/impl/MembreRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/repository/interfaces/MembreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/interfaces/MembreRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/MembreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/MembreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/MembreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/MembreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/PersonneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/PersonneServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/PersonneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/PersonneService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/RegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/RegisterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/workpal/HomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/workpal/HomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +90,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/workpal/Main.java</url>
-          <line>30</line>
+          <line>34</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

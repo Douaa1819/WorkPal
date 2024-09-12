@@ -1,5 +1,11 @@
 package com.workpal.view.workpal;
+import com.workpal.dao.impl.PersonneDAOImpl;
+import com.workpal.dao.interfaces.PersonneDAO;
 import com.workpal.models.Membre;
+import com.workpal.repository.impl.MembreRepositoryImpl;
+import com.workpal.repository.impl.PersonneRepositoryImpl;
+import com.workpal.repository.interfaces.MembreRepository;
+import com.workpal.repository.interfaces.PersonneRepository;
 import com.workpal.services.Interfaces.MembreService;
 import com.workpal.services.Impl.MembreServiceImpl;
 
@@ -7,7 +13,14 @@ import java.util.Scanner;
 
 public class HomeView {
 
-    private MembreService membreService = new MembreServiceImpl();
+    private MembreService membreService;
+
+    public HomeView() {
+        MembreRepository membreRepository = new MembreRepositoryImpl();
+        PersonneDAO personneDAO = new PersonneDAOImpl();
+        PersonneRepository personneRepository = new PersonneRepositoryImpl(personneDAO);
+        this.membreService = new MembreServiceImpl(membreRepository, personneRepository);
+    }
 
     public void updateMembreInfo(Membre membre) {
         Scanner scanner = new Scanner(System.in);
@@ -42,7 +55,7 @@ public class HomeView {
                 break;
             default:
                 System.out.println("Choix invalide.");
-                return; // Sortir si le choix n'est pas valide
+                return;
         }
 
         try {
