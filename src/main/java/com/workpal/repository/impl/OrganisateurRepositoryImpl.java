@@ -22,4 +22,9 @@ public class  OrganisateurRepositoryImpl implements OrganisateurRepository {
     public Optional<Organisateur >findByEmail(String email) {
         return organisateurDAO.findByEmail(email);
     }
+
+    @Override
+    public void delete(int id) {
+        organisateurDAO.delete(id);
+    }
 }

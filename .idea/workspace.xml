@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1305ae3f-af3a-4ad8-93c7-9abd05b464bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/OrganisateurDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/impl/OrganisateurRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/OrganisateurServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/OrganisateurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/admin/OrganisateurView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/AdminDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/AdminDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/GestionnaireDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/OrganisateurDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/WorkingSpaceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/WorkingSpaceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/AdminDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/AdminDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/GestionnareDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/PersonneDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/PersonneDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/models/Gestionnaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/models/Organisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/repository/impl/PersonneRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/impl/PersonneRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/repository/interfaces/GestionnaireRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/interfaces/OrganisateurRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/PersonneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/PersonneServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/PersonneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/PersonneService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/OrganisateurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/OrganisateurDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

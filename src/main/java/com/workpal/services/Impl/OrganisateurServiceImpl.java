@@ -39,4 +39,11 @@ public class OrganisateurServiceImpl implements OrganisateurService {
         return personneRepository.findByEmail(email).isPresent() ||
                 organisateurRepository.findByEmail(email).isPresent();
     }
+
+    @Override
+    public void deleteOrganisateur(int id) {
+        organisateurRepository.delete(id);
+        System.out.println("Organisateur supprimé avec succès : " + id);
+    }
+
 }

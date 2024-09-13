@@ -8,4 +8,5 @@ public interface OrganisateurRepository {
 
     void register(Organisateur organisateur);
     Optional<Organisateur> findByEmail(String email);
+    void delete(int id);
 }

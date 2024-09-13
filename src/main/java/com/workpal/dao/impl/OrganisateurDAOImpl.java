@@ -65,4 +65,18 @@ public class OrganisateurDAOImpl implements OrganisateurDAO {
         }
         return Optional.empty();
     }
+    @Override
+    public void delete(int id) throws DatabaseException {
+        String query = "DELETE FROM organisateur WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected != 1) {
+                throw new DatabaseException("Erreur lors de la suppression de l'organisateur.");
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Erreur lors de la suppression de l'organisateur : " + e.getMessage());
+        }
+    }
 }
