@@ -7,4 +7,4 @@ Pour suivre la planification et les tâches en cours, veuillez consulter notre t
 
 ## Presenattion
 
- [Presentation EventKeeper](https://www.canva.com/design/DAGPqHvBfWA/vHE8lxQbEXdDqgoz0or_Zw/edit)
+ [Presentation WorkPal](https://www.canva.com/design/DAGQoVgYTNk/XPtoReTw_B2UZ5rjdhbvKw/edit)
