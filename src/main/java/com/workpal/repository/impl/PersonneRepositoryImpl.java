@@ -13,7 +13,6 @@ public class PersonneRepositoryImpl implements PersonneRepository {
     public PersonneRepositoryImpl(PersonneDAO personneDAO) {
         this.personneDAO = personneDAO;
     }
-
     @Override
     public Optional<Personne> findByEmail(String email) {
         return personneDAO.findByEmail(email);

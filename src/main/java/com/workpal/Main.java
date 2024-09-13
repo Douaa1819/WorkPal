@@ -1,11 +1,20 @@
 package com.workpal;
 
 import com.workpal.config.DatabaseConnection;
+import com.workpal.dao.impl.OrganisateurDAOImpl;
 import com.workpal.dao.impl.PersonneDAOImpl;
+import com.workpal.dao.interfaces.OrganisateurDAO;
+import com.workpal.dao.interfaces.PersonneDAO;
 import com.workpal.models.Membre;
 import com.workpal.repository.impl.MembreRepositoryImpl;
+import com.workpal.repository.impl.OrganisateurRepositoryImpl;
+import com.workpal.repository.impl.PersonneRepositoryImpl;
+import com.workpal.repository.interfaces.OrganisateurRepository;
+import com.workpal.repository.interfaces.PersonneRepository;
+import com.workpal.services.Impl.OrganisateurServiceImpl;
 import com.workpal.services.Impl.PersonneServiceImpl;
-import com.workpal.view.auth.LoginView;
+import com.workpal.services.Interfaces.OrganisateurService;
+import com.workpal.view.admin.OrganisateurView;
 import com.workpal.view.auth.RegisterView;
 import com.workpal.view.workpal.HomeView;
 
@@ -18,11 +27,11 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        DatabaseConnection.run();
-       RegisterView registerView = new RegisterView();
+//        DatabaseConnection.run();
+//       RegisterView registerView = new RegisterView();
 //        LoginView loginView = new LoginView();
 //        loginView.displayLoginMenu();
-        registerView.handleUserRegistration();
+//        registerView.handleUserRegistration();
 
 
 
@@ -32,6 +41,21 @@ public class Main {
 //        HomeView homeView = new HomeView();
 //
 //        homeView.updateMembreInfo(membre);
+
+        // Création des DAO
+        OrganisateurDAO organisateurDAO = new OrganisateurDAOImpl();
+        PersonneDAO personneDAO = new PersonneDAOImpl();
+
+        // Création des Repositories
+        OrganisateurRepository organisateurRepository = new OrganisateurRepositoryImpl(organisateurDAO);
+        PersonneRepository personneRepository = new PersonneRepositoryImpl(personneDAO);
+
+        // Création du Service
+        OrganisateurService organisateurService = new OrganisateurServiceImpl(organisateurRepository, personneRepository);
+
+        // Création de la Vue
+        OrganisateurView organisateurView = new OrganisateurView(organisateurService);
+        organisateurView.addOrganisateur("testemail", "memebre@gmail.com", "password123",2);
         }
 
     }

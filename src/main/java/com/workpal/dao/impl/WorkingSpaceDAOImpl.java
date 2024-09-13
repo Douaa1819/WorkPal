@@ -69,6 +69,7 @@ public class WorkingSpaceDAOImpl implements WorkingSpaceDAO {
         return workingSpaces;
     }
 
+
     @Override
     public void updateWorkingSpace(WorkingSpace workingSpace) {
         String query = "UPDATE working_spaces SET name = ?, description = ?, manager_id = ? WHERE id = ?";

@@ -2,6 +2,7 @@ package com.workpal.dao.impl;
 
 import com.workpal.dao.interfaces.AdminDAO;
 import com.workpal.models.Admin;
+import com.workpal.models.Organisateur;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
