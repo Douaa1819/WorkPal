@@ -4,11 +4,17 @@ import com.workpal.models.WorkingSpace;
 
 import java.util.List;
 
-public interface WorkingSpaceDAO  {
+public interface WorkingSpaceDAO {
 
-    void createWorkingSpace(WorkingSpace workingSpace);
-    WorkingSpace getWorkingSpaceById(int id);
-    List<WorkingSpace> getAllWorkingSpaces();
-    void updateWorkingSpace(WorkingSpace workingSpace);
-    void deleteWorkingSpace(int id);
+    void save(WorkingSpace workingSpace);
+
+    WorkingSpace findById(int id);
+
+    ;
+
+    List<WorkingSpace> findAll();
+
+    void update(WorkingSpace workingSpace);
+
+    void delete(int id);
 }

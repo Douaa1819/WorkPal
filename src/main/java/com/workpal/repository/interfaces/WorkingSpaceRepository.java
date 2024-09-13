@@ -5,9 +5,9 @@ import com.workpal.models.WorkingSpace;
 import java.util.List;
 
 public interface WorkingSpaceRepository {
-    void createWorkingSpace(WorkingSpace workingSpace);
-    List<WorkingSpace> getAllWorkingSpaces();
-    WorkingSpace getWorkingSpaceById(int id);
-    void updateWorkingSpace(WorkingSpace workingSpace);
-    void deleteWorkingSpace(int id);
+    void register(WorkingSpace workingSpace);
+    WorkingSpace getById(int id);
+    List<WorkingSpace> getAll();
+    void delete(int id);
+    void update(WorkingSpace workingSpace);
 }

@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface WorkingSpaceService {
     void createWorkingSpace(WorkingSpace workingSpace);
+    WorkingSpace getWorkingSpace(int id);
     List<WorkingSpace> getAllWorkingSpaces();
-    WorkingSpace getWorkingSpaceById(int id);
+    void removeWorkingSpace(int id);
     void updateWorkingSpace(WorkingSpace workingSpace);
-    void deleteWorkingSpace(int id);
 }

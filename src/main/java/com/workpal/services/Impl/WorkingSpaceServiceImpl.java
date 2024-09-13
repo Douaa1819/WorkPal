@@ -8,8 +8,7 @@ import com.workpal.services.Interfaces.WorkingSpaceService;
 import java.util.List;
 
 public class WorkingSpaceServiceImpl implements WorkingSpaceService {
-
-    private final WorkingSpaceRepository workingSpaceRepository;
+    private WorkingSpaceRepository workingSpaceRepository;
 
     public WorkingSpaceServiceImpl(WorkingSpaceRepository workingSpaceRepository) {
         this.workingSpaceRepository = workingSpaceRepository;
@@ -17,26 +16,28 @@ public class WorkingSpaceServiceImpl implements WorkingSpaceService {
 
     @Override
     public void createWorkingSpace(WorkingSpace workingSpace) {
-        workingSpaceRepository.createWorkingSpace(workingSpace);
+        // Ici vous pouvez ajouter des vérifications de validation (ex: nom unique)
+        workingSpaceRepository.register(workingSpace);
+    }
+
+
+    @Override
+    public WorkingSpace getWorkingSpace(int id) {
+        return workingSpaceRepository.getById(id);
     }
 
     @Override
     public List<WorkingSpace> getAllWorkingSpaces() {
-        return workingSpaceRepository.getAllWorkingSpaces();
+        return workingSpaceRepository.getAll();
     }
 
     @Override
-    public WorkingSpace getWorkingSpaceById(int id) {
-        return workingSpaceRepository.getWorkingSpaceById(id);
+    public void removeWorkingSpace(int id) {
+        workingSpaceRepository.delete(id);
     }
 
     @Override
     public void updateWorkingSpace(WorkingSpace workingSpace) {
-        workingSpaceRepository.updateWorkingSpace(workingSpace);
-    }
-
-    @Override
-    public void deleteWorkingSpace(int id) {
-        workingSpaceRepository.deleteWorkingSpace(id);
+        workingSpaceRepository.update(workingSpace);
     }
 }

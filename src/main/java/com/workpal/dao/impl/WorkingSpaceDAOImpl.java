@@ -2,13 +2,13 @@ package com.workpal.dao.impl;
 
 import com.workpal.dao.interfaces.WorkingSpaceDAO;
 import com.workpal.models.WorkingSpace;
+import com.workpal.exceptions.DatabaseException;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class WorkingSpaceDAOImpl implements WorkingSpaceDAO {
-
     private Connection connection;
 
     public WorkingSpaceDAOImpl(Connection connection) {
@@ -16,84 +16,71 @@ public class WorkingSpaceDAOImpl implements WorkingSpaceDAO {
     }
 
     @Override
-    public void createWorkingSpace(WorkingSpace workingSpace) {
-        String query = "INSERT INTO working_spaces (name, description, manager_id) VALUES (?, ?, ?)";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, workingSpace.getName());
-            stmt.setString(2, workingSpace.getDescription());
-            stmt.setInt(3, workingSpace.getManagerId());
-            stmt.executeUpdate();
-            System.out.println("Working Space créé avec succès !");
+    public void save(WorkingSpace workingSpace) throws DatabaseException {
+        String query = "INSERT INTO working_space (name, description, manager_id) VALUES (?, ?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, workingSpace.getName());
+            statement.setString(2, workingSpace.getDescription());
+            statement.setInt(3, workingSpace.getManagerId());
+            statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseException("Erreur lors de l'enregistrement du WorkingSpace: " + e.getMessage());
         }
     }
 
     @Override
-    public WorkingSpace getWorkingSpaceById(int id) {
-        String query = "SELECT * FROM working_spaces WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
+    public WorkingSpace findById(int id) throws DatabaseException {
+        String query = "SELECT * FROM working_space WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            ResultSet rs = statement.executeQuery();
             if (rs.next()) {
-                return new WorkingSpace(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("description"),
-                        rs.getInt("manager_id")
-                );
+                return new WorkingSpace(rs.getInt("id"), rs.getString("name"), rs.getString("description"), rs.getInt("manager_id"));
             }
+            return null;
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseException("Erreur lors de la récupération du WorkingSpace: " + e.getMessage());
         }
-        return null;
     }
 
     @Override
-    public List<WorkingSpace> getAllWorkingSpaces() {
-        List<WorkingSpace> workingSpaces = new ArrayList<>();
-        String query = "SELECT * FROM working_spaces";
-        try (Statement stmt = connection.createStatement()) {
-            ResultSet rs = stmt.executeQuery(query);
+    public List<WorkingSpace> findAll() throws DatabaseException {
+        String query = "SELECT * FROM working_space";
+        List<WorkingSpace> spaces = new ArrayList<>();
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                workingSpaces.add(new WorkingSpace(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("description"),
-                        rs.getInt("manager_id")
-                ));
+                spaces.add(new WorkingSpace(rs.getInt("id"), rs.getString("name"), rs.getString("description"), rs.getInt("manager_id")));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseException("Erreur lors de la récupération des WorkingSpaces: " + e.getMessage());
         }
-        return workingSpaces;
+        return spaces;
     }
 
 
     @Override
-    public void updateWorkingSpace(WorkingSpace workingSpace) {
-        String query = "UPDATE working_spaces SET name = ?, description = ?, manager_id = ? WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, workingSpace.getName());
-            stmt.setString(2, workingSpace.getDescription());
-            stmt.setInt(3, workingSpace.getManagerId());
-            stmt.setInt(4, workingSpace.getId());
-            stmt.executeUpdate();
-            System.out.println("Working Space mis à jour avec succès !");
+    public void update(WorkingSpace workingSpace) throws DatabaseException {
+        String query = "UPDATE working_space SET name = ?, description = ?, manager_id = ? WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, workingSpace.getName());
+            statement.setString(2, workingSpace.getDescription());
+            statement.setInt(3, workingSpace.getManagerId());
+            statement.setInt(4, workingSpace.getId());
+            statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseException("Erreur lors de la mise à jour du WorkingSpace: " + e.getMessage());
         }
     }
 
     @Override
-    public void deleteWorkingSpace(int id) {
-        String query = "DELETE FROM working_spaces WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
-            System.out.println("Working Space supprimé avec succès !");
+    public void delete(int id) throws DatabaseException {
+        String query = "DELETE FROM wworking_space WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseException("Erreur lors de la suppression du WorkingSpace: " + e.getMessage());
         }
     }
 }

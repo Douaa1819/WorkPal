@@ -7,35 +7,35 @@ import com.workpal.repository.interfaces.WorkingSpaceRepository;
 import java.util.List;
 
 public class WorkingSpaceRepositoryImpl implements WorkingSpaceRepository {
-
-    private final WorkingSpaceDAO workingSpaceDAO;
+    private WorkingSpaceDAO workingSpaceDAO;
 
     public WorkingSpaceRepositoryImpl(WorkingSpaceDAO workingSpaceDAO) {
         this.workingSpaceDAO = workingSpaceDAO;
     }
 
     @Override
-    public void createWorkingSpace(WorkingSpace workingSpace) {
-        workingSpaceDAO.createWorkingSpace(workingSpace);
+    public void register(WorkingSpace workingSpace) {
+        workingSpaceDAO.save(workingSpace);
     }
 
     @Override
-    public List<WorkingSpace> getAllWorkingSpaces() {
-        return workingSpaceDAO.getAllWorkingSpaces();
+    public WorkingSpace getById(int id) {
+        return workingSpaceDAO.findById(id);
     }
 
     @Override
-    public WorkingSpace getWorkingSpaceById(int id) {
-        return workingSpaceDAO.getWorkingSpaceById(id);
+    public List<WorkingSpace> getAll() {
+        return workingSpaceDAO.findAll();
     }
 
     @Override
-    public void updateWorkingSpace(WorkingSpace workingSpace) {
-        workingSpaceDAO.updateWorkingSpace(workingSpace);
+    public void delete(int id) {
+        workingSpaceDAO.delete(id);
     }
 
+
     @Override
-    public void deleteWorkingSpace(int id) {
-        workingSpaceDAO.deleteWorkingSpace(id);
+    public void update(WorkingSpace workingSpace) {
+        workingSpaceDAO.update(workingSpace);
     }
 }
