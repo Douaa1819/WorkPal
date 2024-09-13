@@ -58,6 +58,6 @@ public class Personne {
 
     @Override
     public String toString() {
-        return "Person{" + "id=" + id + ", name='" + name + '\'' + ", email='" + email + '\'' + ", role= membre"+ '}';
+        return "Person{" + "id=" + id + ", name='" + name + '\'' + ", email='" + email + '\''  + ", role=" + role_id + '}';
     }
 }

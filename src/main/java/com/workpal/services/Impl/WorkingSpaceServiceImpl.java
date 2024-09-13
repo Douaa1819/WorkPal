@@ -8,7 +8,7 @@ import com.workpal.services.Interfaces.WorkingSpaceService;
 import java.util.List;
 
 public class WorkingSpaceServiceImpl implements WorkingSpaceService {
-    private WorkingSpaceRepository workingSpaceRepository;
+    private final WorkingSpaceRepository workingSpaceRepository;
 
     public WorkingSpaceServiceImpl(WorkingSpaceRepository workingSpaceRepository) {
         this.workingSpaceRepository = workingSpaceRepository;

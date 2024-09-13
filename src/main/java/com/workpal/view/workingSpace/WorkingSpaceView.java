@@ -12,7 +12,38 @@ public class WorkingSpaceView {
     public WorkingSpaceView(WorkingSpaceService workingSpaceService) {
         this.workingSpaceService = workingSpaceService;
     }
+    public void displayWorkingSpaceMenu() {
+        while (true) {
+            System.out.println("=== Gestion des Working Spaces ===");
+            System.out.println("1. Créer un Working Space");
+            System.out.println("2. Afficher tous les Working Spaces");
+            System.out.println("3. Modifier un Working Space");
+            System.out.println("4. Supprimer un Working Space");
+            System.out.println("5. Quitter");
 
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 1:
+                    addWorkingSpace();
+                    break;
+                case 2:
+                    showWorkingSpaces();
+                    break;
+                case 3:
+                    updateWorkingSpace();
+                    break;
+                case 4:
+                    deleteWorkingSpace();
+                    break;
+                case 5:
+                    System.out.println("Sortie du programme.");
+                    return;
+                default:
+                    System.out.println("Choix invalide. Veuillez réessayer.");
+            }
+        }
+    }
     public void addWorkingSpace() {
         System.out.print("Nom de l'espace de travail: ");
         String name = scanner.nextLine();

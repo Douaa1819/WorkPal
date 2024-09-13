@@ -8,42 +8,33 @@ import com.workpal.repository.impl.MembreRepositoryImpl;
 import com.workpal.repository.impl.PersonneRepositoryImpl;
 import com.workpal.repository.interfaces.MembreRepository;
 import com.workpal.repository.interfaces.PersonneRepository;
-import com.workpal.services.Interfaces.MembreService;
 import com.workpal.services.Impl.MembreServiceImpl;
 import com.workpal.utils.ValidateUser;
+import com.workpal.view.workpal.HomeView;
 
 import java.util.Scanner;
 
 public class RegisterView {
-
-    private final MembreService membreService;
+    private final MembreServiceImpl membreService;
     private final Scanner scanner = new Scanner(System.in);
+    private final HomeView homeView;
 
     public RegisterView() {
-        MembreRepository membreRepository = new MembreRepositoryImpl();
         PersonneDAO personneDAO = new PersonneDAOImpl();
         PersonneRepository personneRepository = new PersonneRepositoryImpl(personneDAO);
+        MembreRepository membreRepository = new MembreRepositoryImpl();
         this.membreService = new MembreServiceImpl(membreRepository, personneRepository);
+        this.homeView = new HomeView();
     }
 
     public void registerMembre() {
-        boolean isValidInput = false;
-        Membre membre = null;
-
-        while (!isValidInput) {
-            try {
-                membre = createMembreFromInput();
-                isValidInput = true;
-            } catch (InvalidInputException e) {
-                System.out.println(e.getMessage());
-                System.out.println("Veuillez réessayer avec des informations valides.");
-            }
-        }
-
         try {
+            Membre membre = createMembreFromInput();
             membreService.registerMembre(membre);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Membre inscrit avec succès.");
+            homeView.displayMembreMenu();
+        } catch (Exception e) {
+            System.out.println("Erreur : " + e.getMessage());
         }
     }
 
@@ -67,34 +58,5 @@ public class RegisterView {
         int role_id = 1;
 
         return new Membre(0, name, email, password, role_id, phone);
-    }
-
-    public void handleUserRegistration() {
-        boolean success = false;
-
-        while (!success) {
-            try {
-                Membre membre = createMembreFromInput();
-                try {
-                    membreService.registerMembre(membre);
-                    success = true;
-                } catch (IllegalArgumentException e) {
-                    System.err.println("Erreur : " + e.getMessage());
-                    System.out.print("Voulez-vous réessayer (R) ou quitter (Q) ? ");
-                    String choice = scanner.nextLine().trim().toUpperCase();
-
-                    if (choice.equals("Q")) {
-                        System.out.println("Programme terminé.");
-                        System.exit(0);
-                    } else if (!choice.equals("R")) {
-                        System.out.println("Option invalide. Programme terminé.");
-                        System.exit(1);
-                    }
-                }
-            } catch (InvalidInputException e) {
-                System.out.println("Erreur d'entrée : " + e.getMessage());
-                System.out.println("Veuillez réessayer avec des informations valides.");
-            }
-        }
     }
 }

@@ -75,7 +75,7 @@ public class WorkingSpaceDAOImpl implements WorkingSpaceDAO {
 
     @Override
     public void delete(int id) throws DatabaseException {
-        String query = "DELETE FROM wworking_space WHERE id = ?";
+        String query = "DELETE FROM working_space WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
             statement.executeUpdate();

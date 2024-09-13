@@ -4,6 +4,7 @@ import com.workpal.dao.interfaces.AdminDAO;
 import com.workpal.dao.interfaces.OrganisateurDAO;
 import com.workpal.dao.interfaces.MembreDAO;
 import com.workpal.models.Personne;
+import com.workpal.repository.impl.PersonneRepositoryImpl;
 import com.workpal.repository.interfaces.PersonneRepository;
 import com.workpal.services.Interfaces.PersonneService;
 import org.mindrot.jbcrypt.BCrypt;
@@ -24,6 +25,7 @@ public class PersonneServiceImpl implements PersonneService {
         this.organisateurDAO = gestionnaireDAO;
         this.adminDAO = adminDAO;
     }
+
 
     @Override
     public Optional<Personne> login(String email, String password) {

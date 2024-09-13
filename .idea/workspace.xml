@@ -7,14 +7,14 @@
     <list default="true" id="1305ae3f-af3a-4ad8-93c7-9abd05b464bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/config/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/WorkingSpaceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/WorkingSpaceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/WorkingSpaceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/WorkingSpaceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/repository/impl/WorkingSpaceRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/impl/WorkingSpaceRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/repository/interfaces/WorkingSpaceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/repository/interfaces/WorkingSpaceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/models/Personne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/models/Personne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/PersonneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/PersonneServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/WorkingSpaceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/WorkingSpaceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/WorkingSpaceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/WorkingSpaceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/RegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/RegisterView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/workingSpace/WorkingSpaceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/workingSpace/WorkingSpaceView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/workpal/HomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/workpal/HomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +36,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -65,6 +68,31 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.workpal.Main" />
+      <module name="WorkPal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.workpal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,6 +103,17 @@
       <updated>1725723337842</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
