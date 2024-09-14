@@ -100,8 +100,6 @@ public class HomeView {
             switch (choice) {
                 case 1:
                     System.out.println("Veuillez entrer les informations du membre à modifier.");
-                    // Simulate user input for demonstration purposes
-                    // In practice, you would fetch this from a database or user input
                     System.out.print("ID : ");
                     int id = scanner.nextInt();
                     scanner.nextLine();
@@ -144,10 +142,8 @@ public class HomeView {
     private void saveFavoriteSpace() {
         System.out.print("ID de l'espace de travail à ajouter aux favoris : ");
         int workingSpaceId = scanner.nextInt();
-        scanner.nextLine(); // Clean buffer
-
-        // Récupération de l'espace de travail
-        WorkingSpace workingSpace = workingSpaceService.getWorkingSpace(workingSpaceId);  // Utilisation correcte du service
+        scanner.nextLine();
+        WorkingSpace workingSpace = workingSpaceService.getWorkingSpace(workingSpaceId);
         if (workingSpace != null) {
             int membreId = 20;
             favorisService.ajouterFavori(membreId, workingSpaceId);

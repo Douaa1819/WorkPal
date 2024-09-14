@@ -16,6 +16,7 @@ public class Auth {
     }
 
     public void auth() {
+        System.out.println(Email.Mail("rabiilfarakh2816@gmail.com"));
         System.out.println("1. Login");
         System.out.println("2. Register");
 
