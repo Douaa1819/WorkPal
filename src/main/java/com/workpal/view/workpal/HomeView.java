@@ -1,27 +1,46 @@
 package com.workpal.view.workpal;
 
+import com.workpal.config.DatabaseConnection;
+import com.workpal.dao.impl.FavorisDAOImpl;
 import com.workpal.dao.impl.PersonneDAOImpl;
+import com.workpal.dao.impl.WorkingSpaceDAOImpl;
+import com.workpal.dao.interfaces.FavorisDAO;
 import com.workpal.dao.interfaces.PersonneDAO;
+import com.workpal.dao.interfaces.WorkingSpaceDAO;
 import com.workpal.models.Membre;
+import com.workpal.models.WorkingSpace;
 import com.workpal.repository.impl.MembreRepositoryImpl;
 import com.workpal.repository.impl.PersonneRepositoryImpl;
+import com.workpal.repository.impl.WorkingSpaceRepositoryImpl;
 import com.workpal.repository.interfaces.MembreRepository;
 import com.workpal.repository.interfaces.PersonneRepository;
+import com.workpal.repository.interfaces.WorkingSpaceRepository;
+import com.workpal.services.Impl.FavorisServiceImpl;
+import com.workpal.services.Impl.WorkingSpaceServiceImpl;
+import com.workpal.services.Interfaces.FavorisService;
 import com.workpal.services.Interfaces.MembreService;
 import com.workpal.services.Impl.MembreServiceImpl;
+import com.workpal.services.Interfaces.WorkingSpaceService;
 
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class HomeView {
-
+    Connection connection = DatabaseConnection.getInstance().getConnection();
     private MembreService membreService;
     private final Scanner scanner = new Scanner(System.in);
-
+    private WorkingSpaceService workingSpaceService;
+    private FavorisService favorisService;
     public HomeView() {
         MembreRepository membreRepository = new MembreRepositoryImpl();
         PersonneDAO personneDAO = new PersonneDAOImpl();
-        PersonneRepository personneRepository = new PersonneRepositoryImpl(personneDAO);
+        PersonneRepository personneRepository = new PersonneRepositoryImpl(personneDAO);;
         this.membreService = new MembreServiceImpl(membreRepository, personneRepository);
+        FavorisDAO favorisDAO = new FavorisDAOImpl(connection);
+        WorkingSpaceDAO workingSpaceDAO = new WorkingSpaceDAOImpl(connection);  // Assuming you have this class
+        WorkingSpaceRepository workingSpaceRepository = new WorkingSpaceRepositoryImpl(workingSpaceDAO);
+        this.favorisService = new FavorisServiceImpl(favorisDAO);
+        this.workingSpaceService = new WorkingSpaceServiceImpl(workingSpaceRepository);
     }
 
     public void updateMembreInfo(Membre membre) {
@@ -108,6 +127,7 @@ public class HomeView {
                     break;
                 case 4:
                     System.out.println("Sauvegarde des espaces favoris");
+                    saveFavoriteSpace();
                     break;
                 case 5:
                     System.out.println("Consultation du calendrier des événements");
@@ -121,4 +141,20 @@ public class HomeView {
         }
     }
 
+    private void saveFavoriteSpace() {
+        System.out.print("ID de l'espace de travail à ajouter aux favoris : ");
+        int workingSpaceId = scanner.nextInt();
+        scanner.nextLine(); // Clean buffer
+
+        // Récupération de l'espace de travail
+        WorkingSpace workingSpace = workingSpaceService.getWorkingSpace(workingSpaceId);  // Utilisation correcte du service
+        if (workingSpace != null) {
+            int membreId = 20;
+            favorisService.ajouterFavori(membreId, workingSpaceId);
+            System.out.println("Espace de travail ajouté aux favoris !");
+        } else {
+            System.out.println("Espace de travail introuvable.");
+        }
+    }
 }
+

@@ -7,7 +7,8 @@ import com.workpal.dao.impl.OrganisateurDAOImpl;
 import com.workpal.dao.impl.PersonneDAOImpl;
 import com.workpal.dao.impl.WorkingSpaceDAOImpl; // Add this import
 import com.workpal.dao.interfaces.WorkingSpaceDAO;
-import com.workpal.models.Membre;
+import com.workpal.services.Interfaces.FavorisService; // Import FavorisService
+import com.workpal.dao.impl.FavorisDAOImpl; // Import FavorisDAO
 import com.workpal.models.Personne;
 import com.workpal.repository.impl.PersonneRepositoryImpl;
 import com.workpal.repository.impl.WorkingSpaceRepositoryImpl; // Add this import
@@ -63,10 +64,10 @@ public class LoginView {
 
     // Gérer la connexion
     private void handleLogin() {
-        System.out.print("Email : ");
+        System.out.print(" Entrer Votre Email : ");
         String email = scanner.nextLine();
 
-        System.out.print("Mot de passe : ");
+        System.out.print(" Entrer Votre Mot de passe : ");
         String password = scanner.nextLine();
 
         Optional<Personne> personneOpt = personneService.login(email, password);
@@ -74,7 +75,6 @@ public class LoginView {
         if (personneOpt.isPresent()) {
             Personne personne = personneOpt.get();
 
-            // Affichage du message selon le rôle de la personne
             switch (personne.getRoleId()) {
                 case 1:
                     System.out.println("Bienvenue Membre : " + personne.getName());

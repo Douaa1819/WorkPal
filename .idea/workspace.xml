@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1305ae3f-af3a-4ad8-93c7-9abd05b464bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/FavorisDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/interfaces/FavorisDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/models/Favoris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/FavorisServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Interfaces/FavorisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/WorkingSpaceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/dao/impl/WorkingSpaceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/models/Personne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/models/Personne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/PersonneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/PersonneServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/WorkingSpaceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/services/Impl/WorkingSpaceServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/RegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/auth/RegisterView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/workingSpace/WorkingSpaceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/workingSpace/WorkingSpaceView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workpal/view/workpal/HomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workpal/view/workpal/HomeView.java" afterDir="false" />
     </list>
@@ -24,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
